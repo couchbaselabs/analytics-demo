@@ -1,0 +1,47 @@
+function OnUpdate(doc, meta) {
+    if (doc.type == "fairfax-c")
+    {
+        //tgt1[meta.id] = doc;
+        tgt1["id::"+doc.id] = {
+            "id": doc.id,
+            "CrashEnvironmentContributingCircumstancesAbstract": doc.CrashEnvironmentContributingCircumstancesAbstract,
+            "CrashFirstHarmfulEventLocationCode": doc.CrashFirstHarmfulEventLocationCode,
+            "CrashInformationSource": doc.CrashInformationSource,
+            "CrashPerson": doc.CrashPerson,
+            "docType": "accident",
+            "DrivingAccidentSeverityAbstract": "1",
+            "CountyName": "Fairfax, VA"
+        };
+    }
+    else if (doc.type == "orange-c")
+    {
+        //tgt2[meta.id] = doc;
+        tgt2["id::"+doc.id] = {
+            "id": doc.id,
+            "ConveyanceStateAssignedVINIndicator": doc.ConveyanceStateAssignedVINIndicator,
+            "Crash": doc.Crash,
+            "CrashPerson": doc.CrashPerson,
+            "DrivingAccidentSeverityAbstract": doc.DrivingAccidentSeverityAbstract,
+            "DrivingAccidentSeverityText": doc.DrivingAccidentSeverityText,
+            "EMSOffloadAmbulanceCapability": doc.EMSOffloadAmbulanceCapability,
+            "docType": "accident",
+            "CountyName": "Orange, CA"
+
+        };
+    }
+    else
+    {
+        //tgt3[meta.id] = doc;
+        tgt3["id::"+doc.id] = {
+            "id": doc.id,
+            "ConveyanceStateAssignedVINIndicator": doc.conveyancestateassignedvinindicator,
+            "Crash": doc.crash,
+            "CrashPerson": doc.crashperson,
+            "DrivingAccidentSeverityAbstract": doc.drivingaccidentseverityabstract,
+            "DrivingAccidentSeverityText": doc.drivingaccidentseveritytext,
+            "EMSOffloadAmbulanceCapability": doc.emsoffloadambulancecapability,
+            "docType": "accident",
+            "CountyName": "Santa Clara, CA"
+        };
+    }
+}

@@ -1,0 +1,156 @@
+{
+    "type": "fulltext-index",
+    "name": "VA_Fairfax",
+    "uuid": "",
+    "sourceType": "gocbcore",
+    "sourceName": "niem",
+    "planParams": {
+      "maxPartitionsPerPIndex": 171,
+      "indexPartitions": 6
+    },
+    "params": {
+      "doc_config": {
+        "docid_prefix_delim": "",
+        "docid_regexp": "",
+        "mode": "scope.collection.type_field",
+        "type_field": "text"
+      },
+      "mapping": {
+        "analysis": {},
+        "default_analyzer": "standard",
+        "default_datetime_parser": "dateTimeOptional",
+        "default_field": "_all",
+        "default_mapping": {
+          "dynamic": true,
+          "enabled": false
+        },
+        "default_type": "_default",
+        "docvalues_dynamic": false,
+        "index_dynamic": true,
+        "store_dynamic": false,
+        "type_field": "_type",
+        "types": {
+          "Virginia.fairfax_county_police": {
+            "dynamic": true,
+            "enabled": true,
+            "properties": {
+              "CountyName": {
+                "dynamic": false,
+                "enabled": true,
+                "fields": [
+                  {
+                    "docvalues": true,
+                    "include_in_all": true,
+                    "include_term_vectors": true,
+                    "index": true,
+                    "name": "CountyName",
+                    "store": true,
+                    "type": "text"
+                  }
+                ]
+              },
+              "Crash": {
+                "dynamic": false,
+                "enabled": true,
+                "fields": [
+                  {
+                    "docvalues": true,
+                    "include_in_all": true,
+                    "include_term_vectors": true,
+                    "index": true,
+                    "name": "Crash",
+                    "store": true,
+                    "type": "text"
+                  }
+                ]
+              },
+              "CrashPerson": {
+                "dynamic": false,
+                "enabled": true,
+                "fields": [
+                  {
+                    "docvalues": true,
+                    "include_in_all": true,
+                    "include_term_vectors": true,
+                    "index": true,
+                    "name": "CrashPerson",
+                    "store": true,
+                    "type": "text"
+                  }
+                ]
+              },
+              "DrivingAccidentSeverityAbstract": {
+                "dynamic": false,
+                "enabled": true,
+                "fields": [
+                  {
+                    "docvalues": true,
+                    "include_in_all": true,
+                    "include_term_vectors": true,
+                    "index": true,
+                    "name": "DrivingAccidentSeverityAbstract",
+                    "store": true,
+                    "type": "text"
+                  }
+                ]
+              },
+              "DrivingAccidentSeverityText": {
+                "dynamic": false,
+                "enabled": true,
+                "fields": [
+                  {
+                    "docvalues": true,
+                    "include_in_all": true,
+                    "include_term_vectors": true,
+                    "index": true,
+                    "name": "DrivingAccidentSeverityText",
+                    "store": true,
+                    "type": "text"
+                  }
+                ]
+              }
+            }
+          },
+          "accident": {
+            "dynamic": true,
+            "enabled": false,
+            "properties": {
+              "CrashPerson": {
+                "dynamic": false,
+                "enabled": true,
+                "fields": [
+                  {
+                    "include_in_all": true,
+                    "include_term_vectors": true,
+                    "index": true,
+                    "name": "CrashPerson",
+                    "store": true,
+                    "type": "text"
+                  }
+                ]
+              },
+              "DrivingAccidentSeverityText": {
+                "dynamic": false,
+                "enabled": true,
+                "fields": [
+                  {
+                    "include_in_all": true,
+                    "include_term_vectors": true,
+                    "index": true,
+                    "name": "DrivingAccidentSeverityText",
+                    "store": true,
+                    "type": "text"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "store": {
+        "indexType": "scorch",
+        "segmentVersion": 15
+      }
+    },
+    "sourceParams": {}
+  }
